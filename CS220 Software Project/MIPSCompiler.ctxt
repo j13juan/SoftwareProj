@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=filename
+comment0.target=MIPSCompiler(java.lang.String)
+comment1.params=r
+comment1.target=java.lang.String\ registerFunction(java.lang.String)
+comment2.params=op
+comment2.target=java.lang.String\ getOpcode(java.lang.String)
+numComments=3
