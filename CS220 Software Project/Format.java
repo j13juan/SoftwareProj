@@ -7,7 +7,7 @@
  * takes the instruction, figures out the format, and calls the correct format method.
  * 
  */
-public class getFormat
+public class Format
 {
     public String getFormat(String[] codeLine){
         String instruction = codeLine[0];
