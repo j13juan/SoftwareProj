@@ -161,7 +161,8 @@ public class Format
     
     public static String makeJ(String[] codeLine){
         String binaryString = "";
-        
+        //none of this is acrtually going to happen
+        //makeJ needs to access the scanner class, so that needs to be global
         binaryString = binaryString + DataBank.registerFunction(codeLine[1]);
         
         return binaryString;
