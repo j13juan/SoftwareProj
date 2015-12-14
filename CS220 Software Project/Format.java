@@ -9,9 +9,9 @@
  */
 public class Format
 {
-    public String getFormat(String[] codeLine){
+    public static String getFormat(String[] codeLine){
         String instruction = codeLine[0];
-        String format;
+        String format = "";
         switch(instruction){
             case "add": format = "r";
                 break;
@@ -114,12 +114,27 @@ public class Format
     }
     
     
-    public String makeR(String[] codeLine){
+    public static String makeR(String[] codeLine){
+        String binaryString = "";
+        
+        DataBank.registerFunction(codeLine);
+        
+        return binaryString;
     }
     
-    public String makeI(String[] codeLine){
+    public static String makeI(String[] codeLine){
+        String binaryString = "";
+        
+        DataBank.registerFunction(codeLine);
+        
+        return binaryString;
     }
     
-    public String makeJ(String[] codeLine){
+    public static String makeJ(String[] codeLine){
+        String binaryString = "";
+        
+        DataBank.registerFunction(codeLine);
+        
+        return binaryString;
     }
 }

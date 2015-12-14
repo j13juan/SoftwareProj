@@ -9,11 +9,11 @@
 
 import java.util.Scanner;
 import java.io.*;
-public class MIPSCompiler
+public class DataBank
 {
     String[] readIn = new String[5];
     
-    public MIPSCompiler(String filename){
+    public DataBank(String filename){
         Scanner inFile = null;
         try{
             inFile = new Scanner( new File( filename )  );
@@ -26,9 +26,9 @@ public class MIPSCompiler
 
     }
 
-    public static String registerFunction(String r)
+    public static String registerFunction(String[] codeLine)
     {
-        String register = r;
+        String register = codeLine[1];
         String regBinary;
         switch (register)
         {
@@ -103,9 +103,9 @@ public class MIPSCompiler
         
     }
 
-    public String getOpcode(String op)
+    public static String getOpcode(String[] codeLine)
     {
-        String opCode = op;
+        String opCode = codeLine[5];
         String opBinary;
         switch (opCode)
         {
