@@ -11,9 +11,9 @@ import java.util.Scanner;
 import java.io.*;
 public class DataBank
 {
-    public static String registerFunction(String[] codeLine)
+    public static String registerFunction(String r)
     {
-        String register = codeLine[2];
+        String register = r;
         String regBinary;
         switch (register)
         {

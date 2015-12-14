@@ -19,7 +19,7 @@ public class Format
                 break;    
             case "and": format = "r";
                 break;
-            case "jr": format = "r";
+            case "jr": format = "r3";
                 break;
             case "nor": format = "r";
                 break;
@@ -29,9 +29,9 @@ public class Format
                 break;
             case "sltu": format = "r";
                 break;
-            case "sll": format = "r";
+            case "sll": format = "r2";
                 break;    
-            case "srl": format = "r";
+            case "srl": format = "r2";
                 break;
             case "sub": format = "r";
                 break;    
@@ -53,7 +53,7 @@ public class Format
                 break;
             case "multu": format = "r";
                 break;    
-            case "sra": format = "r";
+            case "sra": format = "r2";
                 break;
             case "syscall": format = "r";
                 break;
@@ -102,6 +102,12 @@ public class Format
         if (format.equals("r")){
             return makeR(codeLine);
         }
+        else if (format.equals("r2")){
+            return makeR2(codeLine);
+        }
+        else if (format.equals("r3")){
+            return makeR3(codeLine);
+        }
         else if(format.equals("i")){
             return makeI(codeLine);
         }
@@ -115,9 +121,31 @@ public class Format
     
     
     public static String makeR(String[] codeLine){
-        String binaryString = "";
+        String binaryString = "000000";
         
-        DataBank.registerFunction(codeLine);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[2]);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[3]);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[1]);
+        
+        return binaryString;
+    }
+    
+    public static String makeR2(String[] codeLine){
+        String binaryString = "000000";
+        
+        binaryString = binaryString + DataBank.registerFunction(codeLine[2]);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[3]);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[1]);
+        
+        return binaryString;
+    }
+    
+    public static String makeR3(String[] codeLine){
+        String binaryString = "000000";
+        
+        binaryString = binaryString + DataBank.registerFunction(codeLine[2]);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[3]);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[1]);
         
         return binaryString;
     }
@@ -125,7 +153,8 @@ public class Format
     public static String makeI(String[] codeLine){
         String binaryString = "";
         
-        DataBank.registerFunction(codeLine);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[1]);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[2]);
         
         return binaryString;
     }
@@ -133,7 +162,7 @@ public class Format
     public static String makeJ(String[] codeLine){
         String binaryString = "";
         
-        DataBank.registerFunction(codeLine);
+        binaryString = binaryString + DataBank.registerFunction(codeLine[1]);
         
         return binaryString;
     }
