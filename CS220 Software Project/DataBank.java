@@ -11,24 +11,9 @@ import java.util.Scanner;
 import java.io.*;
 public class DataBank
 {
-    String[] readIn = new String[5];
-    
-    public DataBank(String filename){
-        Scanner inFile = null;
-        try{
-            inFile = new Scanner( new File( filename )  );
-        }
-        catch (FileNotFoundException e)
-        {
-            System.out.println("Error opening file ");
-            System.exit(0);
-        }
-
-    }
-
     public static String registerFunction(String[] codeLine)
     {
-        String register = codeLine[1];
+        String register = codeLine[2];
         String regBinary;
         switch (register)
         {

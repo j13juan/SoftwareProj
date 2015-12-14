@@ -10,7 +10,7 @@
 public class Format
 {
     public static String getFormat(String[] codeLine){
-        String instruction = codeLine[0];
+        String instruction = codeLine[1];
         String format = "";
         switch(instruction){
             case "add": format = "r";
